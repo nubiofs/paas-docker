@@ -1,6 +1,6 @@
 # [PaaS Docker](https://hub.docker.com/r/pss1suporte/paas-docker/)
 
-Tendo como objetivo <strong>[Plataform as a Service - PaaS](https://pt.wikipedia.org/wiki/Plataforma_como_servi%C3%A7o)</strong>: conteinerizado no Docker. O propósito é usar a imagem docker ([aqui](https://hub.docker.com/r/pss1suporte/paas-docker/)) para ser usando como servidor de integração contínua (CI) com o [Jenkins](https://jenkins.io/).
+Tendo como objetivo <strong>[Plataform as a Service - PaaS](https://pt.wikipedia.org/wiki/Plataforma_como_servi%C3%A7o)</strong>: conteinerizado no Docker. O propósito é usar a imagem docker ([aqui](https://hub.docker.com/r/pss1suporte/paas-docker/)) para ser usado como servidor de integração contínua (CI) com o [Jenkins](https://jenkins.io/).
 
 ## Objetivos Principais [Conceitos](http://stackoverflow.com/questions/28608015/continuous-integration-vs-continuous-delivery-vs-continuous-deployment):
 - Criar uma Plataforma de Produção - AWS;
@@ -18,6 +18,8 @@ Para construir a imagem usei as orientações discutidas em [Oskar Hane: 2015].
 3. Gerenciar containers com [Kubernetes](https://kubernetes.io/) [Alan Mark Berg: 2015 - 5];
 4. Experiência em projetos utilizando micro serviços e computação distribuída;
 5. Experiência em sistemas de banco de dados NoSQL (Cassandra, MongoDB, etc.);
+
+![Kubernetes Architecture](https://github.com/pssilva/paas-docker/blob/master/kubernetes/architecture-kubernetes.png)
 
 ### Referência
 
