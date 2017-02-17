@@ -1,9 +1,9 @@
-# escape=\ (backslash)
 # Plataforma as a Service: ambientes de produção e Dev com Jenkins como Integração Contínua.
 #
 # VERSION               0.0.1
 # AUTHOR                Paulo Sergio da Silva
 # EMAIL                 pss1suporte@gmail.com
+# escape=\ (backslash)
 
 FROM      ubuntu
 VOLUME /tmp
@@ -15,10 +15,25 @@ RUN apt-get install -y default-jre
 RUN apt-get install -y default-jdk
 RUN apt-get install -y openjdk-8-jre
 RUN apt-get install -y openjdk-8-jdk
-RUN apt-get install -y software-properties-common && add-apt-repository ppa:maxmind/ppa && apt-get update && apt-get -y install libmaxminddb0 libmaxminddb-dev mmdb-bin
+RUN apt-get install -y software-properties-common && add-apt-repository ppa:maxmind/ppa
+RUN apt-get install -y dkms
+RUN apt-get install -y vim
+
+RUN apt-get install -y nginx
+
+RUN apt-get install -y maven
+
+RUN wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add -
+RUN sh -c 'echo deb http://pkg.jenkins-ci.org/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
 RUN apt-get clean all
 RUN apt-get update
 
+RUN apt-get install -y jenkins
 
+ADD config_script.sh /root/config_script.sh
+RUN chmod +x ~/config_script.sh
+
+RUN ["sh","-c", "/root/config_script.sh"]
 
 
