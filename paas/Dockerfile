@@ -38,15 +38,12 @@ RUN a2ensite jenkins
 RUN apache2ctl restart
 
 ADD jenkins.war /root/jenkins.war
-
-
-
 ADD config_script.sh /root/config_script.sh
 
 RUN chmod +x ~/config_script.sh
 
 ENV MAVEN_HOME=/usr/share/maven
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 
 RUN ["sh","-c", "/root/config_script.sh"]
-
 
