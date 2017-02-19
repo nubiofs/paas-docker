@@ -23,7 +23,7 @@ Para construir a imagem usei as orientações discutidas em [Oskar Hane: 2015].
 
 
 ### Como usar:
-Considerando que temos uma instância do Amazon Machine Image - AMI iniciada: [aqui](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AccessingInstances.html) AWS EC2. Você pode acessar sua instância e executar o script: [aqui](https://github.com/pssilva/paas-docker/blob/master/paas/getting-started.sh). Ou executar manualmente os comandas abaixo:
+Considerando que temos uma instância do Amazon Machine Image - AMI iniciada: [aqui](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AccessingInstances.html) AWS EC2. Você pode acessar sua instância e executar o script: [aqui](https://github.com/pssilva/paas-docker/blob/master/paas/getting-started.sh). Ou executar manualmente os comandos abaixo:
 
 - 1. Clonar o projeto: `git clone https://github.com/pssilva/paas-docker.git`;
 - 2. Acessar a pasta: `cd paas-docker/paas`;
