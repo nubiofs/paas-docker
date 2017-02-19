@@ -21,6 +21,20 @@ Para construir a imagem usei as orientações discutidas em [Oskar Hane: 2015].
 
 ![Kubernetes Architecture](https://github.com/pssilva/paas-docker/blob/master/kubernetes/architecture-kubernetes.png)
 
+
+### Como usar:
+Considerando que temos uma instância do Amazon Machine Image - AMI iniciada: [aqui](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AccessingInstances.html) AWS EC2. Você pode acessar sua instância e executar o script: [aqui](https://github.com/pssilva/paas-docker/blob/master/paas/getting-started.sh). Ou executar manualmente os comandas abaixo:
+
+- 1. Clonar o projeto: `git clone https://github.com/pssilva/paas-docker.git`;
+- 2. Acessar a pasta: `cd paas-docker/paas`;
+- 3. Baixar o jenkins: `wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war `
+- 4. Construir (build) a imagem docker: `docker build -t ubuntu:PaaS-Docker . `;
+- 5. Rodar a imagem - ubuntu:PaaS-Docker: `docker run -p 8080:8080 -p 8001:8001 -p 50000:50000 -i -t ubuntu:PaaS-Docker sh -c 'java -jar /root/jenkins.war > /var/log/jenkins-my-docker.log 2>&1'`
+- 6. Acessar o link: `<IPv4 Public IP>:8080`, vide figura abaixo.
+
+![IPv4 Public IP AMI](https://github.com/pssilva/paas-docker/blob/master/aws-ami/ip-publico.png)
+
+
 ### Referência
 
 - Oskar Hane: 2015, Packt Publishing, [Build Your Own PaaS with Docker](http://it-ebooks.directory/book-1784393940.html): <br />
