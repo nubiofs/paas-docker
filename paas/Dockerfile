@@ -30,9 +30,22 @@ RUN apt-get clean all
 RUN apt-get update
 
 RUN apt-get install -y jenkins
+RUN a2enmod proxy
+RUN /etc/init.d/apache2 restart
+
+COPY jenkins.conf /etc/apache2/sites-available/jenkins.conf
+RUN a2ensite jenkins
+RUN apache2ctl restart
+
+ADD jenkins.war /root/jenkins.war
+
+
 
 ADD config_script.sh /root/config_script.sh
+
 RUN chmod +x ~/config_script.sh
+
+ENV MAVEN_HOME=/usr/share/maven
 
 RUN ["sh","-c", "/root/config_script.sh"]
 
